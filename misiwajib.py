@@ -4,20 +4,23 @@ import navigation.imu as imu
 
 rc = RCLib()
 
-rc.setmode('MANUAL')
 rc.arm()
-
-time.sleep(5)
-
-rc.raw('throttle', 1700)
+rc.raw('throttle', 1400)
 time.sleep(3)
-rc.raw('throttle', 1700)
+rc.raw('forward', 1800)
+time.sleep(2)
+rc.raw('throttle', 1420)
+time.sleep(2)
+rc.raw('throttle', 1445)
 
-rc.setmode('ALT_HOLD')
 
-rc.raw('forward', 1700)
-time.sleep(20)
+time.sleep(11)
 
-rc.setmode('MANUAL')
+
+
+rc.raw('forward', 1500)
+time.sleep(2)
+
+
 rc.killall()
 rc.disarm()
